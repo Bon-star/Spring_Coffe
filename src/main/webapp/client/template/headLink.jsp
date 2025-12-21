@@ -48,6 +48,7 @@
 <link rel="preload stylesheet" href="https://file.hstatic.net/1000075078/file/slick_d9b7cd1cb6f34c47a8ffe74c66bb42dc.css" as="style">
 <link rel="preload stylesheet" href="//cdn.hstatic.net/themes/1000075078/1001392287/14/jquery-ui.css?v=2213" as="style">
 <link rel="preload stylesheet" href="//cdn.hstatic.net/themes/1000075078/1001392287/14/general.scss.css?v=2213" as="style">
+<link rel="preload stylesheet" href="//cdn.hstatic.net/themes/1000075078/1001392287/14/product.scss.css?v=2213" ass="style">
 
 <link rel="preload stylesheet" href="//cdn.hstatic.net/themes/1000075078/1001392287/14/index.scss.css?v=2213" ass="style">
 
