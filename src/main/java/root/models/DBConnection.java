@@ -25,9 +25,16 @@ public final class DBConnection {
             ds.setServerName(StringValue.SERVER_SQL);
             ds.setPortNumber(Integer.parseInt(StringValue.PORT_SQL));
             ds.setDatabaseName(StringValue.DATABASE_SQL);
+            ds.setEncrypt("true"); 
+            ds.setTrustServerCertificate(true);
 
-            return ds.getConnection();
+            Connection conn = ds.getConnection();
+            if (conn != null) {
+                System.out.println("===> KẾT NỐI DATABASE THÀNH CÔNG!");
+            }
+            return conn;            
         } catch (SQLException e) {
+        	System.err.println("===> KẾT NỐI THẤT BẠI: " + e.getMessage());
             e.printStackTrace();
         }
         return null;
