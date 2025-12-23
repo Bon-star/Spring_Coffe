@@ -1,0 +1,168 @@
+@charset "UTF-8";
+
+body.mainBody-theme {
+    background-color: #000;
+    color: #fff;
+    font-family: 'SF Pro Display', sans-serif;
+}
+
+a { text-decoration: none; color: inherit; transition: 0.3s; }
+a:hover { color: #F15A25; text-decoration: none; }
+
+.menu-horizontal-wrap {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 80px; 
+    z-index: 99;
+    background: rgba(0, 0, 0, 0.95);
+    border-bottom: 1px solid #222;
+    padding: 15px 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    margin-bottom: 30px; /* Tạo khoảng cách với nội dung bên dưới */
+}
+
+.menu-horizontal {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.menu-item-horizontal a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 20px;
+    border-radius: 50px;
+    border: 1px solid #333;
+    color: #888;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    background: #111;
+}
+
+.menu-item-horizontal a:hover, 
+.menu-item-horizontal a.active {
+    border-color: #F15A25;
+    color: #F15A25;
+    background: #2a120b;
+}
+
+.menu-item-horizontal svg {
+    width: 20px;
+    height: 20px;
+    fill: #888;
+}
+.menu-item-horizontal a:hover svg {
+    fill: #F15A25;
+}
+
+/* 3. SIDEBAR (CỘT TRÁI - DỌC) */
+.sticky-menu {
+    position: -webkit-sticky;
+    position: sticky;
+    /* Tính toán: Top Menu Root (90px) + Chiều cao Menu Root (~60px) + Gap */
+    top: 160px; 
+    height: fit-content;
+}
+
+.sticky-menu-title span {
+    font-size: 24px;
+    font-weight: 700;
+    color: #F15A25;
+    text-transform: uppercase;
+    display: inline-block; /* Để số mũ hiển thị đúng cạnh */
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* SỬA SỐ ĐẾM (COUNT) THÀNH SỐ MŨ */
+.count { 
+    font-size: 12px;       /* Chữ nhỏ lại */
+    color: #888;
+    vertical-align: super; /* Đẩy lên trên giống số mũ */
+    margin-left: 2px;
+    font-weight: 600;
+}
+
+.sticky-menu-lists {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border-left: 2px solid #333;
+    padding-left: 20px;
+}
+
+.sticky-menu-lists .menu-item {
+    color: #aaa;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.sticky-menu-lists .menu-item:hover { color: #fff; padding-left: 5px; }
+
+/* 4. SẢN PHẨM (CỘT PHẢI) */
+.section-product-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    text-transform: uppercase;
+    border-left: 4px solid #F15A25;
+    padding-left: 10px;
+}
+
+.product-inner {
+    background: #111;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 30px;
+    transition: transform 0.3s;
+}
+.product-inner:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(241, 90, 37, 0.2); }
+
+.product-image img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+.product-info h3 a {
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    height: 44px;
+}
+
+.product-type {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.product-price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #F15A25;
+    margin-top: 10px;
+}
+
+#collection-wrap { padding-top: 0px; }
+.collection-banner img { width: 100%; display: block; }
+
+/* Scroll margin để khi click menu không bị che mất tiêu đề */
+.section-product-wrap {
+    scroll-margin-top: 180px;
+}

@@ -1,54 +1,113 @@
 package root.models;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Product {
-    private int id;
-    private String name;
-    private String image;
-    private int subCategoryId;
-    private String subCategoryName;
-    private int active;
-    
-    // DANH SÁCH BIẾN THỂ (SIZE/GIÁ)
-    private List<Variant> variants = new ArrayList<>();
+	private int id;
+	private String name;
+	private String image;
+	private int subCategoryId;
+	private int active;
 
-    public Product() {
-        this.id = 0;
-        this.active = 1;
-        this.image = "noimage.jpg";
-    }
+	private String subCategoryName;
+	private String categoryName;
 
-    public Product(int id, String name, String image, int subCategoryId, int active) {
-        this.id = id;
-        this.name = name;
-        this.image = image;
-        this.subCategoryId = subCategoryId;
-        this.active = active;
-    }
+	private long price;
 
-    public long getMinPrice() {
-        if (variants.isEmpty()) return 0;
-        long min = variants.get(0).getPrice();
-        for (Variant v : variants) {
-            if (v.getPrice() < min) min = v.getPrice();
-        }
-        return min;
-    }
+	private long minPrice;
 
-    // Getters Setters
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
-    public String getImage() { return image; }
-    public void setImage(String image) { this.image = image; }
-    public int getSubCategoryId() { return subCategoryId; }
-    public void setSubCategoryId(int subCategoryId) { this.subCategoryId = subCategoryId; }
-    public String getSubCategoryName() { return subCategoryName; }
-    public void setSubCategoryName(String subCategoryName) { this.subCategoryName = subCategoryName; }
-    public int getActive() { return active; }
-    public void setActive(int active) { this.active = active; }
-    public List<Variant> getVariants() { return variants; }
-    public void setVariants(List<Variant> variants) { this.variants = variants; }
+	private List<Variant> variants = new ArrayList<>();
+
+	public Product() {
+		this.image = "noimage.jpg";
+	}
+
+	public Product(int id, String name, String image, int subCategoryId, int active) {
+		this.id = id;
+		this.name = name;
+		this.image = image;
+		this.subCategoryId = subCategoryId;
+		this.active = active;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
+	public int getSubCategoryId() {
+		return subCategoryId;
+	}
+
+	public void setSubCategoryId(int subCategoryId) {
+		this.subCategoryId = subCategoryId;
+	}
+
+	public int getActive() {
+		return active;
+	}
+
+	public void setActive(int active) {
+		this.active = active;
+	}
+
+	public String getSubCategoryName() {
+		return subCategoryName;
+	}
+
+	public void setSubCategoryName(String subCategoryName) {
+		this.subCategoryName = subCategoryName;
+	}
+
+	public String getCategoryName() {
+		return categoryName;
+	}
+
+	public void setCategoryName(String categoryName) {
+		this.categoryName = categoryName;
+	}
+
+	public long getPrice() {
+		return price;
+	}
+
+	public void setPrice(long price) {
+		this.price = price;
+	}
+
+	public long getMinPrice() {
+		return minPrice;
+	}
+
+	public void setMinPrice(long minPrice) {
+		this.minPrice = minPrice;
+	}
+
+	public List<Variant> getVariants() {
+		return variants;
+	}
+
+	public void setVariants(List<Variant> variants) {
+		this.variants = variants;
+	}
 }

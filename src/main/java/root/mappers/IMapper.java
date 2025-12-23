@@ -1,9 +1,8 @@
 package root.mappers;
-
 import java.sql.ResultSet;
-import java.util.HashSet;
+import java.util.List;
 
 public interface IMapper<T> {
-	T RowMap(ResultSet rs);
-	HashSet<T> RowsMap(ResultSet rs);
+    T RowMap(ResultSet rs);
+    List<T> RowsMap(ResultSet rs);
 }

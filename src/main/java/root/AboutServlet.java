@@ -7,15 +7,13 @@ import jakarta.servlet.http.HttpServletResponse;
 import root.pattern.AdminRepository;
 import java.io.IOException;
 
-public class HomeServlet extends HttpServlet {
-    private static final long serialVersionUID = 1L;
-
+public class AboutServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setAttribute("categories", AdminRepository.Instance().GetHomeData());
-
-        req.setAttribute("aboutSections", AdminRepository.Instance().GetAboutBodySections());
-
-        req.getRequestDispatcher("/client/index.jsp").forward(req, resp);
+        req.setAttribute("topBanner", AdminRepository.Instance().GetTopBanner());
+        
+        req.setAttribute("bodySections", AdminRepository.Instance().GetAboutBodySections());
+        
+        req.getRequestDispatcher("/client/about-us.jsp").forward(req, resp);
     }
 }

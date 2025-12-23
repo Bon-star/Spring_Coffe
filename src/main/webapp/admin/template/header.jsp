@@ -4,37 +4,36 @@
 
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="${pageContext.request.contextPath}/home">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="${pageContext.request.contextPath}/admin/hierarchy">
             <div class="sidebar-brand-icon rotate-n-15">
-                <i class="fas fa-music"></i>
+                <i class="fas fa-coffee"></i>
             </div>
-            <div class="sidebar-brand-text mx-3">Admin</div>
+            <div class="sidebar-brand-text mx-3">Coffee Admin</div>
         </a>
 
         <hr class="sidebar-divider my-0">
 
-        <li class="nav-item" id="nav-dashboard">
-            <a class="nav-link" href="${pageContext.request.contextPath}/*">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
-                <span>Dashboard</span>
-            </a>
-        </li>
-
         <hr class="sidebar-divider">
 
-        <div class="sidebar-heading">Management</div>
+        <div class="sidebar-heading">Quản lý</div>
 
-        <li class="nav-item" id="nav-category">
-            <a class="nav-link" href="${pageContext.request.contextPath}/category">
-                <i class="fas fa-list"></i>
-                <span>Category</span>
+        <li class="nav-item" id="nav-hierarchy">
+            <a class="nav-link" href="${pageContext.request.contextPath}/admin/hierarchy">
+                <i class="fas fa-sitemap"></i>
+                <span>Menu (Phân cấp)</span>
             </a>
         </li>
 
-       <li class="nav-item" id="nav-product">
-            <a class="nav-link" href="${pageContext.request.contextPath}/product">
+        <li class="nav-item" id="nav-product">
+            <a class="nav-link" href="${pageContext.request.contextPath}/admin/products">
                 <i class="fas fa-box-open"></i>
-                <span>Product</span>
+                <span>Sản phẩm</span>
+            </a>
+        </li>
+         <li class="nav-item" id="nav-product">
+            <a class="nav-link" href="${pageContext.request.contextPath}/admin/about-manager">
+                <i class="fas fa-box-open"></i>
+                <span>Trang</span>
             </a>
         </li>
 
@@ -55,7 +54,7 @@
                     <i class="fa fa-bars"></i>
                 </button>
                 
-                <h3 class="h3 mb-0 text-gray-800 ml-2">Admin Dashboard</h3>
+                <h3 class="h3 mb-0 text-gray-800 ml-2">Hệ thống quản trị</h3>
 
                 <ul class="navbar-nav ml-auto">
                     <div class="topbar-divider d-none d-sm-block"></div>

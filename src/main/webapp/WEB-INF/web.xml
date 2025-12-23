@@ -1,39 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
-         version="6.0">
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+	version="6.0">
 
-    <display-name>WebDemo1</display-name>
+	<display-name>CoffeeAdmin</display-name>
 
-    <welcome-file-list>
-        <welcome-file>index.jsp</welcome-file>
-    </welcome-file-list>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
 
-    <servlet>
-        <servlet-name>CategoryServlet</servlet-name>
-        <servlet-class>root.CategoryServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>CategoryServlet</servlet-name>
-        <url-pattern>/category/*</url-pattern>
-    </servlet-mapping>
-    <servlet>
-        <servlet-name>ProductServlet</servlet-name>
-        <servlet-class>root.ProductServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>ProductServlet</servlet-name>
-        <url-pattern>/product/*</url-pattern>
-    </servlet-mapping>
+	<servlet>
+		<servlet-name>HomeServlet</servlet-name>
+		<servlet-class>root.HomeServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>HomeServlet</servlet-name>
+		<url-pattern>/home</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>CollectionServlet</servlet-name>
+		<servlet-class>root.CollectionServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CollectionServlet</servlet-name>
+		<url-pattern>/collection</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>AboutServlet</servlet-name>
+		<servlet-class>root.AboutServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AboutServlet</servlet-name>
+		<url-pattern>/about-us</url-pattern>
+	</servlet-mapping>
 
 
-    <servlet>
-        <servlet-name>HomeServlet</servlet-name>
-        <servlet-class>root.HomeServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>HomeServlet</servlet-name>
-        <url-pattern>/home</url-pattern> </servlet-mapping>
+	<servlet>
+		<servlet-name>HierarchyServlet</servlet-name>
+		<servlet-class>root.HierarchyServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>HierarchyServlet</servlet-name>
+		<url-pattern>/admin/hierarchy</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>ProductManagerServlet</servlet-name>
+		<servlet-class>root.ProductManagerServlet</servlet-class>
+		<multipart-config>
+			<max-file-size>10485760</max-file-size>
+			<max-request-size>52428800</max-request-size>
+			<file-size-threshold>2097152</file-size-threshold>
+		</multipart-config>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ProductManagerServlet</servlet-name>
+		<url-pattern>/admin/products</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ManageAboutServlet</servlet-name>
+		<servlet-class>root.ManageAboutServlet</servlet-class>
+		<multipart-config>
+			<max-file-size>10485760</max-file-size>
+			<max-request-size>52428800</max-request-size>
+			<file-size-threshold>2097152</file-size-threshold>
+		</multipart-config>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ManageAboutServlet</servlet-name>
+		<url-pattern>/admin/about-manager</url-pattern>
+	</servlet-mapping>
 
 </web-app>

@@ -4,7 +4,7 @@ public final class StringValue {
 	public static String SERVER_SQL = "localhost";
 	public static String DATABASE_SQL = "coffee";
 	public static String USER_SQL = "sa";
-	public static String PWD_SQL = "123";
+	public static String PWD_SQL = "melon";
 	public static String PORT_SQL = "1433";
 	
 	//category

@@ -7,15 +7,12 @@ import jakarta.servlet.http.HttpServletResponse;
 import root.pattern.AdminRepository;
 import java.io.IOException;
 
-public class HomeServlet extends HttpServlet {
+public class CollectionServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setAttribute("categories", AdminRepository.Instance().GetHomeData());
-
-        req.setAttribute("aboutSections", AdminRepository.Instance().GetAboutBodySections());
-
-        req.getRequestDispatcher("/client/index.jsp").forward(req, resp);
+        req.setAttribute("menuTree", AdminRepository.Instance().GetFullMenuForClient());
+        req.getRequestDispatcher("/client/collection.jsp").forward(req, resp);
     }
 }

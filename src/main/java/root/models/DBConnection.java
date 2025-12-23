@@ -27,14 +27,9 @@ public final class DBConnection {
             ds.setDatabaseName(StringValue.DATABASE_SQL);
             ds.setEncrypt("true"); 
             ds.setTrustServerCertificate(true);
-
             Connection conn = ds.getConnection();
-            if (conn != null) {
-                System.out.println("===> KẾT NỐI DATABASE THÀNH CÔNG!");
-            }
             return conn;            
         } catch (SQLException e) {
-        	System.err.println("===> KẾT NỐI THẤT BẠI: " + e.getMessage());
             e.printStackTrace();
         }
         return null;

@@ -21,19 +21,19 @@
           </picture>
           
         </a>			
-        <h1 style="display:none"><a href="/">The Coffee House</a></h1>
+        <h1 style="display:none"><a href="${pageContext.request.contextPath}/home">The Coffee House</a></h1>
         
       </div>
       <div class="main-nav d-none d-md-block">
         <ul>
           <li>
-            <a href="/">TRANG CHỦ</a>
+            <a href="${pageContext.request.contextPath}/home">TRANG CHỦ</a>
           </li>
           <li>
-            <a href="https://thecoffeehouse.com/collections/all?themeid=1001392287">"NHÀ" COLLECTION</a>
+            <a href="${pageContext.request.contextPath}/collection">"NHÀ" COLLECTION</a>
           </li>
           <li>
-            <a href="https://thecoffeehouse.com/pages/chinh-sach-bao-mat-thong-tin?view=aboutus&themeid=1001392287">CHUYỆN "NHÀ"</a>
+            <a href="${pageContext.request.contextPath}/about-us">CHUYỆN "NHÀ"</a>
           </li>
           <li>
             <a href="https://thecoffeehouse.com/blogs/coffeeholic">TIN TỨC</a>

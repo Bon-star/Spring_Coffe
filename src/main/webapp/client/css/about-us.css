@@ -1,0 +1,155 @@
+@charset "UTF-8";
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* =========================================
+   1. BANNER TOP (Ảnh to, Chữ đè lên hình)
+   ========================================= */
+.pageAboutus-bannertop {
+    position: relative; /* Để làm mốc cho chữ tuyệt đối */
+    width: 100%;
+    height: 600px; /* Chiều cao cố định cho banner to */
+    overflow: hidden;
+}
+
+.pageAboutus-bannertop img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cắt ảnh vừa khung */
+    object-position: center;
+    filter: brightness(0.7); /* Làm tối ảnh một chút để chữ trắng nổi bật */
+}
+
+/* Khung chứa chữ nằm đè lên ảnh */
+.pageAboutus-bannertop-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Căn giữa tuyệt đối */
+    text-align: center;
+    color: #fff; /* Chữ màu trắng */
+    width: 80%; /* Giới hạn chiều rộng chữ */
+    z-index: 2;
+}
+
+.pageAboutus-bannertop-wrapper .title {
+    font-size: 48px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.pageAboutus-bannertop-wrapper .subtitle {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: #F15A25; /* Màu cam điểm nhấn */
+}
+
+.pageAboutus-bannertop-wrapper .des {
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* =========================================
+   2. CÁC SECTION DƯỚI (Chia 45% - 45%)
+   ========================================= */
+.pageAboutus-banner {
+    padding: 80px 0; /* Khoảng cách trên dưới giữa các section */
+}
+
+/* Container Flexbox chính */
+.pageAboutus-banner-wrap {
+    display: flex;
+    align-items: center; /* Căn giữa theo chiều dọc */
+    justify-content: space-between; /* Đẩy 2 khối ra 2 bên, tự động tạo khoảng trống ở giữa */
+    flex-wrap: wrap;
+}
+
+/* Khối Chữ (45%) */
+.pageAboutus-banner-left {
+    width: 45%;
+    padding-right: 0;
+}
+
+/* Khối Ảnh (45%) */
+.pageAboutus-banner-right {
+    width: 45%;
+    position: relative;
+}
+
+/* Ảnh minh họa trong khối phải */
+.pageAboutus-banner-right-wrap > img {
+    width: 100%;
+    height: 400px; /* Chiều cao ảnh các mục con */
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Định dạng text trong các section */
+.pageAboutus-banner-left .title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 20px;
+    position: relative;
+}
+/* Gạch chân trang trí dưới tiêu đề */
+.pageAboutus-banner-left .title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #F15A25;
+    margin-top: 10px;
+}
+
+.pageAboutus-banner-left .des {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+/* =========================================
+   3. XỬ LÝ ĐẢO CHIỀU (ZIGZAG)
+   ========================================= */
+/* Khi có class .reversed, đảo ngược thứ tự hiển thị */
+.pageAboutus-banner.reversed .pageAboutus-banner-wrap {
+    flex-direction: row-reverse; /* Ảnh sang trái, chữ sang phải */
+}
+
+/* =========================================
+   4. RESPONSIVE (MOBILE)
+   ========================================= */
+@media (max-width: 768px) {
+    /* Banner Top Mobile */
+    .pageAboutus-bannertop {
+        height: 400px;
+    }
+    .pageAboutus-bannertop-wrapper .title {
+        font-size: 30px;
+    }
+    
+    /* Các Section Mobile -> Xếp chồng lên nhau 100% */
+    .pageAboutus-banner-wrap {
+        flex-direction: column-reverse !important; /* Luôn để ảnh lên trên, chữ xuống dưới */
+        gap: 30px;
+    }
+    
+    .pageAboutus-banner-left, 
+    .pageAboutus-banner-right {
+        width: 100%; /* Full màn hình */
+    }
+    
+    .pageAboutus-banner-right-wrap > img {
+        height: 300px;
+    }
+}
